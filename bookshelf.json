@@ -439,5 +439,12 @@
     "image": "https://www.spigotmc.org/data/resource_icons/81/81297.jpg",
     "note": "",
     "translator": "SuperiorMC"
+  },
+  {
+    "title": "Dynmap",
+    "url": "https://izzelaliz.gitbooks.io/dynmap-wiki/content/",
+    "image": "https://cdn.modrinth.com/data/fRQREgAc/2eaa1e6a6fa03e485a319a628d6b29ba382855b4_96.webp",
+    "note": "",
+    "translator": "Izzel"
   }
 ]
