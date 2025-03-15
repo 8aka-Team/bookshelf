@@ -420,13 +420,6 @@
     "translator": "SuperiorMC"
   },
   {
-    "title": "TAB",
-    "url": "https://docs.superiormc.cn/tab-wiki",
-    "image": "https://www.spigotmc.org/data/resource_icons/57/57806.jpg",
-    "note": "",
-    "translator": "SuperiorMC"
-  },
-  {
     "title": "EliteMobs",
     "url": "https://docs.superiormc.cn/elitemobs-wiki",
     "image": "https://www.spigotmc.org/data/resource_icons/40/40090.jpg",
@@ -434,10 +427,10 @@
     "translator": "SuperiorMC"
   },
   {
-    "title": "EliteMobs",
-    "url": "https://docs.superiormc.cn/elitemobs-wiki",
-    "image": "https://www.spigotmc.org/data/resource_icons/40/40090.jpg",
-    "note": "",
+    "title": "PlotSquared",
+    "url": "https://docs.superiormc.cn/plotsquared-wiki",
+    "image": "https://www.spigotmc.org/data/resource_icons/77/77506.jpg",
+    "note": "适用于 PlotSquared v6",
     "translator": "SuperiorMC"
   },
   {
