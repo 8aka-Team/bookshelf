@@ -5,5 +5,166 @@
     "image": "https://bluemap.bluecolored.de/favicon.ico",
     "note": "",
     "translator": "8aka-Team"
+  },
+  {
+    "title": "BetterHUD",
+    "url": "https://plugins.8aka.org/BetterHud/intro",
+    "image": "https://hangarcdn.papermc.io/avatars/project/2299.webp",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "HuskClams",
+    "url": "https://plugins.8aka.org/HuskClaims/intro",
+    "image": "https://assets.william278.net/huskclaims.png",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "HuskTowns",
+    "url": "https://plugins.8aka.org/HuskTowns/intro/",
+    "image": "https://assets.william278.net/husktowns.png",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "ChestCommands",
+    "url": "https://plugins.8aka.org/ChestCommands/intro",
+    "image": "https://media.forgecdn.net/avatars/73/443/636163574444278008.jpg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "LevelledMobs",
+    "url": "https://plugins.8aka.org/LevelledMobs/intro",
+    "image": "https://hangarcdn.papermc.io/avatars/project/15.webp",
+    "note": "适用于 v4 版本",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "Sonar",
+    "url": "https://plugins.8aka.org/Sonar/intro",
+    "image": "https://hangarcdn.papermc.io/avatars/project/1481.webp",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "WeaponMechanics",
+    "url": "https://plugins.8aka.org/WeaponMechanics/intro/",
+    "image": "https://www.spigotmc.org/data/resource_icons/99/99913.jpg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "ViaVersion",
+    "url": "https://plugins.8aka.org/viaversion/intro",
+    "image": "https://hangarcdn.papermc.io/avatars/project/31.webp",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "PhantomWorlds",
+    "url": "https://plugins.8aka.org/ShortDoc/PhantomWorlds/",
+    "image": "https://www.spigotmc.org/data/resource_icons/84/84099.jpg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "ZNPCsPlus",
+    "url": "https://plugins.8aka.org/ShortDoc/ZNPCsPlus/",
+    "image": "https://www.spigotmc.org/data/resource_icons/109/109380.jpg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "zNPCs",
+    "url": "https://plugins.8aka.org/ShortDoc/zNPCs/",
+    "image": "https://www.spigotmc.org/data/resource_icons/80/80940.jpg",
+    "note": "不推荐,建议用 ZNPCsPlus",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "ScreamingBedWars",
+    "url": "https://plugins.8aka.org/ShortDoc/BedWars/",
+    "image": "https://www.spigotmc.org/data/resource_icons/63/63714.jpg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "MiniMOTD",
+    "url": "https://plugins.8aka.org/ShortDoc/MiniMOTD",
+    "image": "https://cdn.modrinth.com/data/16vhQOQN/dc967fb5410417c2311831f24f07b51ebe03629e_96.webp",
+    "note": "官方 wiki 就给了这些",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "CustomRecipes",
+    "url": "https://plugins.8aka.org/ShortDoc/CustomRecipes/",
+    "image": "https://www.spigotmc.org/data/resource_icons/89/89435.jpg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "RoseResourcepack",
+    "url": "https://plugins.8aka.org/ShortDoc/RoseResourcepack/",
+    "image": "https://cdn.modrinth.com/data/7FAiLjDP/d64692b46904b5898509fc243831fb30d1eccbf0.jpeg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "BeautyQuests",
+    "url": "https://plugins.8aka.org/ShortDoc/BeautyQuests/",
+    "image": "https://www.spigotmc.org/data/resource_icons/39/39255.jpg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "BetterHealthBar3",
+    "url": "https://plugins.8aka.org/ShortDoc/BetterHealthBar3/",
+    "image": "https://cdn.modrinth.com/data/7FAiLjDP/d64692b46904b5898509fc243831fb30d1eccbf0.jpeg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "Minepacks",
+    "url": "https://plugins.8aka.org/ShortDoc/Minepacks/",
+    "image": "https://www.spigotmc.org/data/resource_icons/19/19286.jpg",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "TypeWriter",
+    "url": "https://typewriter.8aka.org/",
+    "image": "https://cdn.modrinth.com/data/Vm7B3ymm/27df961b4e8f0d36287aae64a8c9872b090739ee.png",
+    "note": "",
+    "translator": "8aka-Team"
+  },
+  {
+    "title": "EssentialsX",
+    "url": "https://docs.tecostudio.cn/EssentialsX/",
+    "image": "https://www.spigotmc.org/data/resource_icons/9/9089.jpg",
+    "note": "",
+    "translator": "TecoStudio"
+  },
+  {
+    "title": "OtherDrops",
+    "url": "https://docs.tecostudio.cn/OtherDrops/",
+    "image": "https://www.spigotmc.org/data/resource_icons/19/19286.jpg",
+    "note": "",
+    "translator": "TecoStudio"
+  },
+  {
+    "title": "LevelledMobs",
+    "url": "https://docs.tecostudio.cn/LevelledMobs-v3/",
+    "image": "https://hangarcdn.papermc.io/avatars/project/15.webp",
+    "note": "适用于 v3 版本",
+    "translator": "TecoStudio"
+  },
+  {
+    "title": "Nova",
+    "url": "https://nova.netheritetree.cn/nova/zh/",
+    "image": "https://hangarcdn.papermc.io/avatars/project/626.webp",
+    "note": "",
+    "translator": "NetheriteTree"
   }
 ]
