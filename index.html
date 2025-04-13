@@ -3,53 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki 翻译列表</title>
+    <title>📚 翻译 Wiki 列表</title>
     <style>
         :root {
-            --primary-color: #2563eb;
+            --primary-color: #3b82f6; /* Slightly brighter blue */
+            --primary-color-dark: #2563eb;
             --hover-color: #1d4ed8;
-            --background: #f8fafc;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
+            --background: #f7fafc; /* Slightly off-white */
+            --card-background: #ffffff;
+            --text-primary: #1f2937; /* Darker gray */
+            --text-secondary: #6b7280; /* Medium gray */
+            --border-color: #e5e7eb; /* Light gray */
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --shadow-color-hover: rgba(0, 0, 0, 0.1);
+            --focus-ring-color: rgba(59, 130, 246, 0.3);
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
             max-width: 800px;
-            margin: 20px auto;
+            margin: 30px auto; /* Increased margin */
             padding: 0 20px;
-            background: var(--background);
+            background-color: var(--background);
             color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
         }
 
         .search-container {
             position: relative;
-            margin: 32px 0;
+            margin-bottom: 2.5rem; /* Increased spacing */
         }
 
         #searchInput {
             width: 100%;
-            padding: 14px 48px 14px 20px;
-            border: 2px solid #e2e8f0;
+            padding: 14px 50px 14px 20px; /* Adjusted padding for icon */
+            border: 1px solid var(--border-color);
             border-radius: 50px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            background: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--card-background);
+            box-shadow: 0 2px 4px var(--shadow-color);
+            -webkit-appearance: none; /* Remove default iOS styling */
+            appearance: none;
         }
 
         #searchInput:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 0 0 3px var(--focus-ring-color), 0 2px 4px var(--shadow-color);
         }
 
         .search-icon {
             position: absolute;
-            right: 20px;
+            right: 18px; /* Adjusted position */
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-secondary);
+            pointer-events: none; /* Prevent icon from intercepting clicks */
+            width: 20px;
+            height: 20px;
+        }
+
+        #resultCount {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9em;
         }
 
         .site-list {
@@ -58,182 +84,282 @@
         }
 
         .site-item {
-            background: white;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-background);
+            border-radius: 12px; /* Slightly smaller radius */
+            padding: 20px 24px; /* Adjusted padding */
+            margin-bottom: 1rem; /* Consistent spacing */
+            box-shadow: 0 4px 6px -1px var(--shadow-color);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 20px; /* Gap between flex items */
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid var(--border-color); /* Subtle border */
         }
 
         .site-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px -2px var(--shadow-color-hover);
         }
 
         .site-info {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 18px; /* Adjusted gap */
             flex-grow: 1;
+            min-width: 0; /* Prevent flex item overflow */
         }
 
         .site-image {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 52px; /* Slightly larger */
+            height: 52px;
+            border-radius: 10px; /* Adjusted radius */
             object-fit: cover;
-            background: #f1f5f9;
-            padding: 4px;
+            background-color: #f1f5f9; /* Placeholder background */
+            flex-shrink: 0; /* Prevent image shrinking */
+            border: 1px solid var(--border-color);
         }
 
         .site-details {
-            line-height: 1.6;
             flex: 1;
+            min-width: 0; /* Allow text to wrap */
         }
 
         .site-title {
             font-weight: 600;
             color: var(--text-primary);
             margin: 0 0 4px;
-            font-size: 17px;
+            font-size: 1.05em; /* Slightly larger title */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /* Add ellipsis if title too long */
         }
 
         .site-meta {
-            font-size: 0.9em;
+            font-size: 0.88em; /* Slightly adjusted size */
             color: var(--text-secondary);
+            line-height: 1.5; /* Adjusted line height */
         }
 
         .visit-button {
-            background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
             color: white;
-            padding: 10px 24px;
+            padding: 10px 20px; /* Adjusted padding */
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px; /* Gap for icon */
+            white-space: nowrap; /* Prevent button text wrapping */
+            flex-shrink: 0; /* Prevent button shrinking */
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
         }
 
         .visit-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+            transform: scale(1.03); /* Slightly less intense scale */
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
         }
 
-        .no-results {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-secondary);
-            font-size: 1.1em;
+        .visit-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--focus-ring-color), 0 4px 8px rgba(59, 130, 246, 0.3);
         }
 
-        .loading {
+        .visit-button svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .message-box { /* Common style for loading/no-results */
             text-align: center;
-            padding: 40px;
+            padding: 50px 20px;
             color: var(--text-secondary);
             font-size: 1.1em;
+            border: 1px dashed var(--border-color);
+            border-radius: 12px;
+            background-color: var(--card-background);
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto; /* Center spinner */
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         @media (max-width: 640px) {
+            body {
+                margin: 20px auto;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
             .site-item {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 16px;
+                align-items: stretch; /* Stretch items full width */
+                padding: 16px;
             }
-
+            .site-info {
+                gap: 12px;
+            }
+            .site-title {
+                white-space: normal; /* Allow wrapping on mobile */
+                overflow: visible;
+                text-overflow: clip;
+            }
             .visit-button {
                 width: 100%;
                 justify-content: center;
+                padding: 12px 24px; /* Larger tap target */
+            }
+            .search-container {
+                margin-bottom: 1.5rem;
+            }
+            #resultCount {
+                margin-bottom: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
 <h1>📚 翻译 Wiki 列表</h1>
+
 <div class="search-container">
-    <input type="text" id="searchInput" placeholder="搜索书名、备注或翻译者...">
-    <div class="search-icon">🔍</div>
+    <input type="text" id="searchInput" placeholder="搜索书名、备注或翻译者..." aria-label="搜索 Wiki">
+    <div class="search-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+    </div>
 </div>
+
+<div id="resultCount"></div>
 <ul class="site-list" id="siteList">
-    <div class="loading">加载中...</div>
+    <div class="message-box loading">
+        <div class="loading-spinner"></div>
+        加载中...
+    </div>
 </ul>
 
 <script>
-    let allData = []; // 存储全部数据
+    let allData = []; // Store all fetched data
+    let searchTimeout = null; // Timeout ID for debouncing
 
-    // 初始化
+    // --- Utility Function ---
+    function debounce(func, delay) {
+        return function(...args) {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    }
+
+    // --- Core Functions ---
     async function init() {
+        const listContainer = document.getElementById('siteList');
         try {
             const response = await fetch('https://bookshelf.8aka.org/bookshelf.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             allData = await response.json();
-            renderList(allData);
+            renderList(allData); // Initial render with all data
             setupSearch();
         } catch (error) {
             console.error('获取数据失败:', error);
-            document.getElementById('siteList').innerHTML =
-                '<div class="no-results">数据加载失败，请刷新重试</div>';
+            listContainer.innerHTML = `
+                <div class="message-box no-results">
+                    <p>😕 数据加载失败</p>
+                    <p>请检查网络连接或稍后刷新重试。</p>
+                </div>`;
+            // Clear result count on error
+            document.getElementById('resultCount').textContent = '';
         }
     }
 
-    // 渲染列表
     function renderList(data) {
         const listContainer = document.getElementById('siteList');
+        const resultCountContainer = document.getElementById('resultCount');
+
+        listContainer.innerHTML = ''; // Clear previous results or loading state
 
         if (data.length === 0) {
-            listContainer.innerHTML = '<div class="no-results">未找到匹配的结果</div>';
+            listContainer.innerHTML = `
+                <div class="message-box no-results">
+                    <p>🤷‍♀️ 未找到匹配的结果</p>
+                    <p>请尝试不同的关键词。</p>
+                </div>`;
+            resultCountContainer.textContent = '未找到结果';
             return;
         }
 
-        listContainer.innerHTML = '';
+        // Update result count
+        resultCountContainer.textContent = `共找到 ${data.length} 个结果`;
 
         data.forEach(item => {
             const listItem = document.createElement('li');
             listItem.className = 'site-item';
 
+            // Default image if item.image is missing or empty
+            const imageUrl = item.image || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // Transparent pixel
+
             listItem.innerHTML = `
-                    <div class="site-info">
-                        <img src="${item.image}" class="site-image" alt="${item.title}">
-                        <div class="site-details">
-                            <h3 class="site-title">${item.title}</h3>
-                            <div class="site-meta">
-                                ${item.note ? `<span>${item.note}</span><br>` : ''}
-                                翻译者：${item.translator === 'unknown' ? '未知' : item.translator}
-                            </div>
+                <div class="site-info">
+                    <img src="${imageUrl}" class="site-image" alt="${item.title || 'Wiki Cover'}" loading="lazy">
+                    <div class="site-details">
+                        <h3 class="site-title">${item.title || '未知标题'}</h3>
+                        <div class="site-meta">
+                            ${item.note ? `<span>📝 ${item.note}</span><br>` : ''}
+                            翻译者：${item.translator === 'unknown' || !item.translator ? '未知' : item.translator}
                         </div>
                     </div>
-                    <a href="${item.url}" target="_blank" class="visit-button">访问网站 →</a>
-                `;
+                </div>
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="visit-button">
+                    访问网站
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                       <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </a>
+            `;
 
             listContainer.appendChild(listItem);
         });
     }
 
-    // 设置搜索功能
     function setupSearch() {
         const searchInput = document.getElementById('searchInput');
 
-        searchInput.addEventListener('input', (e) => {
-            const keyword = e.target.value.toLowerCase().trim();
+        // Debounced search handler
+        const handleSearch = debounce((event) => {
+            const keyword = event.target.value.toLowerCase().trim();
 
             const filteredData = allData.filter(item => {
-                return (
-                    item.title.toLowerCase().includes(keyword) ||
-                    (item.note && item.note.toLowerCase().includes(keyword)) ||
-                    item.translator.toLowerCase().includes(keyword)
-                );
+                const titleMatch = item.title && item.title.toLowerCase().includes(keyword);
+                const noteMatch = item.note && item.note.toLowerCase().includes(keyword);
+                const translatorMatch = item.translator && item.translator.toLowerCase().includes(keyword);
+                return titleMatch || noteMatch || translatorMatch;
             });
 
             renderList(filteredData);
-        });
+        }, 300); // 300ms delay
+
+        searchInput.addEventListener('input', handleSearch);
     }
 
-    // 初始化程序
-    init();
+    // --- Initialize ---
+    document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
 </html>
